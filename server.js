@@ -17,9 +17,6 @@ var express = require('express');
 //  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
 //
 
-//TODO: my commit
-
-
 var router = express();
 var server = http.createServer(router);
 var io = socketio.listen(server);
@@ -27,6 +24,13 @@ var io = socketio.listen(server);
 router.use(express.static(path.resolve(__dirname, 'client')));
 var messages = [];
 var sockets = [];
+
+// Facebook Webhook
+// TODO: app.get 
+
+
+// handler receiving messages
+// TODO: app.post
 
 io.on('connection', function (socket) {
     messages.forEach(function (data) {
